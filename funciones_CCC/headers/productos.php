@@ -11,7 +11,7 @@ if(array_key_exists($id, $productos) == false){
     http_response_code(404);
     echo "El producto numero ". $id ." no se encuentra en los productos";
 }else{
-    echo "El producto numero ". $id;                                                                                                                                                                                                                                                                                                                                                      se encuentra en los productos";
+    echo "El producto numero ". $id . "se encuentra en los productos";
 }
 
 
