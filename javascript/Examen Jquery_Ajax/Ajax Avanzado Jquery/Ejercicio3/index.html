@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Examen</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+
+      $(function(){
+          $("#mostrar").click(()=>{
+            $.ajax({url: "documento.js", succes: (result)=> {
+                $("#contenido").html("result");
+            }})
+          });
+        });
+    </script>
+  </head>
+  <body>
+    <input type="button" id="mostrar" value="Traer JS"> 
+    <div id="contenido">
+    </div>
+  </body>
+</html>

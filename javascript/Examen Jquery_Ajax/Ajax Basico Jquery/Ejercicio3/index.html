@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Examen</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+
+        $(function(){
+          $("#mostrar").click(()=>{
+            $.get("saludos.xml", (xml) => {
+              var cadena = "";
+              $(xml).find("blog").each(function() {
+                var name = $(this).find('name').text();
+                var description = $(this).find('description').text();
+                var url = $(this).find('url').text();
+                cadena += name + " " + description + " " + url + "<br>";
+
+                $("#contenido").html(cadena);
+
+      });
+    });
+  });
+});
+    </script>
+  </head>
+  <body>
+    <input type="button" id="mostrar" value="Mostrar fichero XML"> 
+    <div id="contenido">
+
+    </div>
+  </body>
+</html>

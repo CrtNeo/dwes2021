@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Examen</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+
+        $(function(){
+          $("#mostrar").click(()=>{
+            $("#contenido").load("pagina.html");
+          });
+        });
+    </script>
+  </head>
+  <body>
+    <input type="button" id="mostrar" value="Mostrar fichero de texto"> 
+    <div id="contenido">
+
+    </div>
+  </body>
+</html>

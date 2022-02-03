@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Examen</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+
+        $(function(){
+          $("#mostrar").click(()=>{
+            $.post("documento.php", { nombre: "John", edad: "22" } , (resultado) =>{
+                $("#contenido").html(resultado);
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <input type="button" id="mostrar" value="Mostrar fichero PHP"> 
+    <div id="contenido">
+
+    </div>
+  </body>
+</html>

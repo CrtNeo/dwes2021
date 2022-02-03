@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Examen</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+
+        $(function(){
+          $("#mostrar").click(()=>{
+            $.get("documento.php",{ usuario: $("#usuario").val(), clave:$("#clave").val() }, (resultado) =>{
+                $("#contenido").html(resultado);
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    Usuario: <input type="text" id="usuario">
+    Clave: <input type="password" id="clave">
+    <br>
+    <input type="button" id="mostrar" value="Enviar"> 
+    <div id="contenido">
+
+    </div>
+  </body>
+</html>

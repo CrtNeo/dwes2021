@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Ejemplo con Ajax para sacar Fichero de Texto</title>
+    <script type="text/javascript">
+      var XMLHttpRequestObject = false;
+      if (window.XMLHttpRequest) {
+        XMLHttpRequestObject = new XMLHttpRequest();
+      } else if (window.ActiveXObject) {
+        XMLHttpRequestObject = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      function cambiarImagen(datos, idDiv) {
+        if (XMLHttpRequestObject) {
+          var imagen = document.getElementById(idDiv);
+          XMLHttpRequestObject.open("GET", datos, true);
+          XMLHttpRequestObject.onreadystatechange = function () {
+            if (
+              XMLHttpRequestObject.readyState == 4 &&
+              XMLHttpRequestObject.status == 200
+            ) {
+              imagen.src = XMLHttpRequestObject.responseText;
+            }
+          };
+          XMLHttpRequestObject.send(null);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Mostrar Fichero de Texto en Ajax</h1>
+      <img
+         id="imagen" src="https://www.batiburrillo.net/wp-content/uploads/2019/07/Ampliacio%CC%81n-de-imagen-en-li%CC%81nea-sin-perder-calidad.jpg"
+      />
+    <br />
+    <input
+      type="button"
+      value="Mostrar Fichero"
+      onclick="cambiarImagen('imagen.txt','imagen')"
+    />
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Ejemplo con Ajax para sacar Fichero de Texto</title>
+    <script type="text/javascript">
+      function loadDoc() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            myFunction(this);
+          }
+        };
+        xhttp.open("GET", "texto.xml", true);
+        xhttp.send();
+      }
+      function myFunction(xml) {
+        var i;
+        var xmlDoc = xml.responseXML;
+        var table = "<tr><th>Artist</th><th>Title</th></tr>";
+        var x = xmlDoc.getElementsByTagName("Libro");
+        for (i = 0; i < x.length; i++) {
+          table +=
+            "<tr><td>" +
+            x[i].getElementsByTagName("Autor")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("Titulo")[0].childNodes[0].nodeValue +
+            "</td></tr>";
+        }
+        document.getElementById("contenedor").innerHTML = table;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Mostrar Fichero de Texto en Ajax</h1>
+    <br />
+    <input
+      type="button"
+      value="Mostrar Fichero XML"
+      onclick="loadDoc()"
+    />
+    <table id="contenedor"></table>
+  </body>
+</html>

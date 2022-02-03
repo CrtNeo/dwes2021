@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Ajax con JQuery</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      type="text/javascript"
+    ></script>
+    <style type="text/css"></style>
+    <script>
+        $(function () {
+            var pokeApi = "https://pokeapi.co/api/v2/pokemon/";
+          $("#boton").click(function (evento) {
+            $.getJSON(pokeApi, function(data){
+                $.each(data.results, function(_,results) {
+         	        $('#contenido').append('<p>' + results.name + '</p>');
+                })
+            .fail(function (request,status,error) {
+              $("#contenido").html(error);
+            })
+        });
+    });
+});
+    </script>
+  </head>
+  <body>
+    <div id="contenido">
+    </div>
+    <input type="button" id="boton" value="Mostrar datos de la API" />
+</body>
+</html>

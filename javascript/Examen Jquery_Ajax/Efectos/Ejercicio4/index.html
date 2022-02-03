@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Ajax con JQuery</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      type="text/javascript"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>    
+    <style type="text/css">
+        h1 {
+          color: blue;
+          cursor: pointer;
+        }
+      </style>
+<script>
+    $(function(){
+        $("#contenido").click(()=>{
+            $("h1").animate(
+                {
+                color : "red", 
+                },
+                1000);
+        })
+    })
+</script>
+</head>
+    <body>
+        <div id="contenido">
+          <h1>Primer h1</h1>
+          <h1>Segundo h1</h1>
+          <h1>Tercer h1</h1>
+        </div>
+    </body>
+  </html>
+  

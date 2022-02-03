@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Examen</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+
+        $(function(){
+            $("input").change(function(){
+              $("#contenido").css({'background' : $('input:checked').val()});
+            });
+        })
+
+    </script>
+  </head>
+  <body>
+    <div id="contenido">    
+      <p>Este párrafo cambiará de color según el valor del radio seleccionado.</p>
+    </div>
+    <br>
+    <input type="radio" name = "radio" value="red">Rojo
+    <input type="radio" name = "radio" value="blue">Azul
+    <input type="radio" name = "radio" value="green">Verde
+  </body>
+</html>

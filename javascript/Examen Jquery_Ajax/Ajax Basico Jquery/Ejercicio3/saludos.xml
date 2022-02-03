@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Blogs>
+  <blog>
+    <name>Hola</name>
+    <description>buenos</description>
+    <url>dias</url>
+  </blog>
+  <blog>
+    <name>Hola</name>
+    <description>buenas</description>
+    <url>tardes</url>
+  </blog>
+  <blog>
+    <name>Hola</name>
+    <description>buenas</description>
+    <url>noches</url>
+  </blog>
+</Blogs>

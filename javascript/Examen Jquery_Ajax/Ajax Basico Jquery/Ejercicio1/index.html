@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Examen</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+
+        $(function(){
+          $("#mostrar").click(()=>{
+            $.ajax({url: "documento.txt", success: (result)=> {
+                $("#contenido").html(result);
+            }});
+          });
+        });
+    </script>
+  </head>
+  <body>
+    <input type="button" id="mostrar" value="Mostrar fichero de texto"> 
+    <div id="contenido">
+
+    </div>
+  </body>
+</html>

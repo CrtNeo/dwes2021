@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Examen</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+
+        $(function(){
+            $("#check").click(function(){
+              var suma = parseInt($("#campo1").val()) + parseInt($("#campo2").val());
+              if($('input:checked')){
+                $("#contenido").append('<input type="text" value= "'+suma+'">');
+              }
+            });
+        })
+
+    </script>
+  </head>
+  <body>
+    <br>
+    <input type="text" name = "numero" id="campo1">
+    <input type="text" name = "numero" id="campo2">
+    <div id="contenido">
+
+    </div>
+    <br>
+    <input type="checkbox" name = "radio" id="check">Sumar
+  </body>
+</html>

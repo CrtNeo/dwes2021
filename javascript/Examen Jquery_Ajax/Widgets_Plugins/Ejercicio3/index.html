@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Ajax con JQuery</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      type="text/javascript"
+    ></script>
+    <style type="text/css">
+      img {
+        width: 100%;
+      }
+    </style>
+    <script>
+      $.fn.superposicion = function (opciones) {
+        let palabras = $.extend({
+          fruta1 : "naranja",
+          fruta2 : "fresa"
+        }, opciones)
+        $(this).append("Me gusta la " + palabras.fruta1 + " y la " + palabras.fruta2);
+        return this;
+      };
+
+      $(function () {
+        $("#boton").click(function (evento) {
+          $("#contenido").superposicion({
+            fruta1: "manzana",
+            fruta2: "banana"
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <input type="button" id="boton" value="Superposicion" />
+    <p id="contenido"></p>
+  </body>
+</html>
